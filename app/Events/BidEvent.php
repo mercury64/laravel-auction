@@ -36,16 +36,7 @@ class BidEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('Bid');
+        return new Channel('Bids');
     }
 
-    /**
-     * Event name.
-     *
-     * @return string
-     */
-    public function broadcastAs()
-    {
-        return 'NewBid';
-    }
 }

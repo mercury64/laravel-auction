@@ -6,11 +6,9 @@
 
 <script>
 
-import websocket from "../mixins/websocket";
-
 export default {
     props: ['lot', 'bid'],
-    mixins: [websocket],
+    
     data() {
         return {
             maxBid: this.bid,
@@ -18,11 +16,13 @@ export default {
         }
     },
     created() {
-        this.socket.on(this.event, (message) => {
+        Echo.channel('Bids')
+            .listen('BidEvent', (message) => {
             if (message.lot_id === this.lotId) {
                 this.maxBid = message.bid_price
             }
-        });
+            });
+
     },
 }
 </script>

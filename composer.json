@@ -15,6 +15,8 @@
         "laravolt/avatar": "^4.1",
         "mews/purifier": "^3.3",
         "predis/predis": "^2.2",
+        "pusher/pusher-php-server": "^7.2",
+        "react/promise": "^2.3",
         "spatie/laravel-permission": "^4.2"
     },
     "require-dev": {
