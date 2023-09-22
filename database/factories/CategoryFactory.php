@@ -11,7 +11,7 @@ class CategoryFactory extends Factory
      * The name of the factory's corresponding model.
      *
      * @var string
-     */
+     */ 
     protected $model = Category::class;
 
     /**
@@ -21,8 +21,10 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'name' => $this->faker->unique()->text(50)
+        $faker = \Faker\Factory::create('en_CA');
+	
+	return [
+            'name' => $faker->unique()->text(50)
         ];
     }
 }

@@ -15,8 +15,14 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::factory()->create([
+            'name' => 'Silent'
+        ]);
+        Category::factory()->create([
+            'name' => 'Live'
+        ]);
+        Category::factory()->create([
             'name' => 'Other'
         ]);
-        Category::factory(5)->create();
+        // Category::factory(5)->create();
     }
 }
