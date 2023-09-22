@@ -54,7 +54,8 @@ class StoreService
         $lot->category_id = $this->request->category;
         $lot->start_price = $this->request->price;
         $lot->status = $this->request->for_sale ? 'sale' : 'draft';
-        $lot->end_time = \Carbon\Carbon::now()->addDay();
+        // $lot->end_time = \Carbon\Carbon::now()->addDay();
+        $lot->end_time = \Carbon\Carbon::createFromDate('2023-09-30 23:59:59','America/Vancouver')->setTimezone('UTC');
         $lot->save();
     }
 
