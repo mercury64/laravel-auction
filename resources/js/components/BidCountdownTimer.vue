@@ -9,7 +9,7 @@
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
                   clip-rule="evenodd"/>
         </svg>
-        <div v-if="sale">{{ hours }}:{{ minutes }}:{{ seconds }}</div>
+        <div v-if="sale">{{ days }}d {{ hours }}h {{ minutes }}m {{ seconds }}s</div>
         <div v-else>Sold</div>
     </div>
 </template>
@@ -39,6 +39,9 @@ export default {
         }
     },
     computed: {
+        days() {
+            return Math.floor((this.time / (60 * 60 * 24)))
+        },
         hours() {
             return Math.floor((this.time / (60 * 60)) % 24)
         },
