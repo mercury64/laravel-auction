@@ -4065,6 +4065,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
+    days: function days() {
+      return Math.floor(this.time / (60 * 60 * 24));
+    },
     hours: function hours() {
       return Math.floor(this.time / (60 * 60) % 24);
     },
@@ -31305,11 +31308,14 @@ var render = function() {
     _vm.sale
       ? _c("div", [
           _vm._v(
-            _vm._s(_vm.hours) +
-              ":" +
+            _vm._s(_vm.days) +
+              "d " +
+              _vm._s(_vm.hours) +
+              "h " +
               _vm._s(_vm.minutes) +
-              ":" +
-              _vm._s(_vm.seconds)
+              "m " +
+              _vm._s(_vm.seconds) +
+              "s"
           )
         ])
       : _c("div", [_vm._v("Sold")])
